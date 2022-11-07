@@ -27,7 +27,7 @@ def subprogramThird(array_1, array_2, array_res = []):
             array_res.append(elements_a)
     print(list(set(array_res)))
 
-def menu():
+def menu(array_1, array_2):
     print("______________________Выберите операцию_____________________________\n"
           "____________________________________________________________________\n"
           "(1) Вывод элементов которые присутствуют в нескольких экземплярах\n"
@@ -37,7 +37,8 @@ def menu():
           "                  только в одном экземпляре\n"
           "_____________________________________________________________________\n"
           "(3) Вывод элементов, которые присутствуют в массиве А,\n"
-          "                 но отсутствуют в массиве В\n")
+          "                 но отсутствуют в массиве В\n"
+          "_____________________________________________________________________\n")
     number_menu = input('number menu= ')
     if number_menu == '1':
         subprogramFirst(array_1, array_2)
@@ -46,7 +47,10 @@ def menu():
     elif number_menu == '3':
         subprogramThird(array_1, array_2)
 
-array_1 = input('Введите массив А= ')
-array_2 = input('Введите массив В= ')
-array_1 = list(map(int, array_1.split()))
-array_2 = list(map(int, array_2.split()))
+def variable():
+    array_1 = input('Введите массив А= ')
+    array_2 = input('Введите массив В= ')
+    array_1 = list(map(str, array_1.split()))
+    array_2 = list(map(str, array_2.split()))
+    menu(array_1, array_2)
+variable()
