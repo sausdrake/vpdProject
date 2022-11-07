@@ -1,9 +1,11 @@
 def subprogramFirst (array_1, array_2, array_res = []):
-    temp = array_1 + array_2
-    for number in temp:
-        if number not in array_res:
-            array_res.append(number)
-    print(array_res)
+    for elements_a in array_1:
+        if (array_1.count(elements_a) > 1) and (elements_a not in array_2):
+            array_res.append(elements_a)
+    for elements_b in array_2:
+        if (array_2.count(elements_b) > 1) and (elements_b not in array_1):
+            array_res.append(elements_b)
+    print(list(set(array_res)))
 def subprogramSecond (array_1, array_2, array_res = []):
     array_b_res = []
     array_a_res = []
