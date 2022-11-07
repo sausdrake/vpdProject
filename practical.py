@@ -6,6 +6,7 @@ def subprogramFirst (array_1, array_2, array_res = []):
         if (array_2.count(elements_b) > 1) and (elements_b not in array_1):
             array_res.append(elements_b)
     print(list(set(array_res)))
+    variable()
 def subprogramSecond (array_1, array_2, array_res = []):
     array_b_res = []
     array_a_res = []
@@ -21,6 +22,7 @@ def subprogramSecond (array_1, array_2, array_res = []):
         if number_b in array_a_res:
             array_res.append(number_b)
     print(array_res)
+    variable()
 
 def subprogramThird(array_1, array_2, array_res = []):
     #array_1 = [set(array_1)
@@ -28,6 +30,7 @@ def subprogramThird(array_1, array_2, array_res = []):
         if elements_a not in array_2:
             array_res.append(elements_a)
     print(list(set(array_res)))
+    variable()
 
 def menu(array_1, array_2):
     print("______________________Выберите операцию_____________________________\n"
@@ -48,6 +51,9 @@ def menu(array_1, array_2):
         subprogramSecond(array_1, array_2)
     elif number_menu == '3':
         subprogramThird(array_1, array_2)
+    else:
+        print('Введите число от 1 до 3\n')
+        menu(array_1, array_2)
 
 def variable():
     array_1 = input('Введите массив А= ')
