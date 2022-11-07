@@ -19,9 +19,17 @@ def subprogramSecond (array_1, array_2, array_res = []):
         if number_b in array_a_res:
             array_res.append(number_b)
     print(array_res)
+
+def subprogramThird(array_1, array_2, array_res = []):
+    #array_1 = [set(array_1)
+    for elements_a in array_1:
+        if elements_a not in array_2:
+            array_res.append(elements_a)
+    print(list(set(array_res)))
 array_1 = input('Введите массив А= ')
 array_2 = input('Введите массив В= ')
 array_1 = list(map(int, array_1.split()))
 array_2 = list(map(int, array_2.split()))
 #subprogramFirst(array_1, array_2)
-subprogramSecond(array_1, array_2)
+#subprogramSecond(array_1, array_2)
+subprogramThird(array_1, array_2)
