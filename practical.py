@@ -1,4 +1,4 @@
-def subprogramFirst (array_1, array_2, array_res = []):
+def subprogramFirst(array_1, array_2, array_res=[]):
     for elements_a in array_1:
         if (array_1.count(elements_a) > 1) and (elements_a not in array_2):
             array_res.append(elements_a)
@@ -6,8 +6,10 @@ def subprogramFirst (array_1, array_2, array_res = []):
         if (array_2.count(elements_b) > 1) and (elements_b not in array_1):
             array_res.append(elements_b)
     print(list(set(array_res)))
-    variable()
-def subprogramSecond (array_1, array_2, array_res = []):
+    stopProgram()
+
+
+def subprogramSecond(array_1, array_2, array_res=[]):
     array_b_res = []
     array_a_res = []
     while len(array_2) > 0:
@@ -22,15 +24,17 @@ def subprogramSecond (array_1, array_2, array_res = []):
         if number_b in array_a_res:
             array_res.append(number_b)
     print(array_res)
-    variable()
+    stopProgram()
 
-def subprogramThird(array_1, array_2, array_res = []):
-    #array_1 = [set(array_1)
+
+def subprogramThird(array_1, array_2, array_res=[]):
+    # array_1 = [set(array_1)
     for elements_a in array_1:
         if elements_a not in array_2:
             array_res.append(elements_a)
     print(list(set(array_res)))
-    variable()
+    stopProgram()
+
 
 def menu(array_1, array_2):
     print("______________________Выберите операцию_____________________________\n"
@@ -55,10 +59,24 @@ def menu(array_1, array_2):
         print('Введите число от 1 до 3\n')
         menu(array_1, array_2)
 
+
+def stopProgram():
+    answer = input('Хотите остановить программу? y/n\n')
+    if answer == 'y':
+        exit()
+    elif answer == 'n':
+        variable()
+    else:
+        print('Упс... попробуйте еше раз\n')
+        stopProgram()
+
+
 def variable():
     array_1 = input('Введите массив А= ')
     array_2 = input('Введите массив В= ')
     array_1 = list(map(str, array_1.split()))
     array_2 = list(map(str, array_2.split()))
     menu(array_1, array_2)
+
+
 variable()
